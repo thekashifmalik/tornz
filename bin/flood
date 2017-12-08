@@ -1,0 +1,12 @@
+#!/bin/bash
+set -eo pipefail
+set -o allexport; source .env; set +o allexport
+
+_=${UI_PORT:? Missing argument.}
+_=${NAME:? Missing argument.}
+
+docker run -it --rm \
+    -p $UI_PORT:3000 \
+    --name $NAME-flood \
+    --network $NAME \
+    $NAME-flood

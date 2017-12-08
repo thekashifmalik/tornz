@@ -1,0 +1,10 @@
+#!/bin/bash
+set -eo pipefail
+set -o allexport; source .env; set +o allexport
+
+_=${NAME:? Missing argument.}
+
+docker build --tag $NAME-rtorrent -f rtorrent.Dockerfile .
+
+#docker network rm $NAME || true
+#docker network create --driver bridge $NAME

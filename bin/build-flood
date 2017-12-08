@@ -1,0 +1,7 @@
+#!/bin/bash
+set -eo pipefail
+set -o allexport; source .env; set +o allexport
+
+_=${NAME:? Missing argument.}
+
+docker build --tag $NAME-flood -f flood.Dockerfile .
