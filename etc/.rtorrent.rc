@@ -1,0 +1,6 @@
+directory = /mnt/t-1tb/torrents
+session = /mnt/t-1tb/torrents/session
+
+scgi_port = localhost:5000
+
+schedule = watch_directory,5,5,load_start=/mnt/t-1tb/torrents/*.torrent
